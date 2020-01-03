@@ -10,9 +10,9 @@ import androidx.viewpager.widget.PagerAdapter;
 
 public class ImageAdapter extends PagerAdapter {
 
-    Context mContext;
+    private Context mContext;
 
-    ImageAdapter(Context context){
+    ImageAdapter(Context context) {
         this.mContext = context;
     }
 
@@ -22,7 +22,9 @@ public class ImageAdapter extends PagerAdapter {
     }
 
     private int[] sliderImageid = new int[]{
-        R.drawable.getstarted, R.drawable.shop, R.drawable.bag, R.drawable.catalog, R.drawable.favorite
+            R.drawable.wall_0, R.drawable.wall_1,
+            R.drawable.wall_2, R.drawable.wall_3,
+            R.drawable.wall_4
     };
 
     @Override
@@ -34,7 +36,7 @@ public class ImageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView mImageView = new ImageView(mContext);
-        mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         mImageView.setImageResource(sliderImageid[position]);
         container.addView(mImageView, 0);
         return mImageView;
